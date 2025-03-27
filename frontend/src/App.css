@@ -16,19 +16,18 @@ body {
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;  /* Responsive */
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 2rem;
   color: black;
-  
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1.5rem;
   color: lightcoral;
-  font-style: bold;
 }
 
 /* Input and buttons */
@@ -36,22 +35,30 @@ h2 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  gap: 10px;
+  flex-wrap: wrap;  /* Responsive */
 }
 
 .project-input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
+button {
+  font-size: 1rem;
+  padding: 10px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Buttons */
 .add-btn {
   background: #28a745;
   color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .add-btn:hover {
@@ -61,22 +68,25 @@ h2 {
 .refresh-btn {
   background: #007bff;
   color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px;
 }
 
 .refresh-btn:hover {
   background: #0056b3;
 }
 
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
 /* Project List */
 .project-list {
   margin-top: 15px;
-  font-size: 13px;
-  font-style: italic;
+  font-size: 14px;
 }
 
 .project-card {
@@ -87,61 +97,38 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
-}
-
-.delete-btn {
-  background: #dc3545;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  background: #c82333;
-}
-
-/* Error and Messages */
-.error {
-  color: red;
-  font-size: 14px;
-}
-
-.refresh-message {
-  color: green;
-  font-size: 14px;
-}
-
-/* Mobile Friendly Layout */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
+  width: 100%;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .project-card {
-    width: 45%; /* Adjust for tablets */
+  .App {
+    max-width: 500px;  /* Tablets */
   }
 }
 
 @media (max-width: 768px) {
-  .project-card {
-    width: 100%; /* Full width on small devices */
+  body {
+    height: auto;
+    padding: 20px;
+  }
+  
+  .App {
+    width: 90%;
+    max-width: 100%;
   }
 
-  h1 {
-    font-size: 2rem;
+  .input-container {
+    flex-direction: column;  /* Stack input & button */
+  }
+
+  .project-card {
+    flex-direction: column;
+    text-align: center;
   }
 
   button {
     font-size: 14px;
-    padding: 8px 16px;
+    padding: 8px 12px;
   }
 }
