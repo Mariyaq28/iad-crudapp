@@ -1,0 +1,12 @@
+{
+  "services": {
+    "backend": {
+      "build": {
+        "command": "npm install"
+      },
+      "start": {
+        "command": "node server.js"
+      }
+    }
+  }
+}
