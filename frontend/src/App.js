@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { FaPlus, FaTrash, FaProjectDiagram } from "react-icons/fa";
 
 
-const API_URL = "http://localhost:5000"; // Backend URL
+const API_URL = "https://iad-crudapp-production-585d.up.railway.app";
+
 
 function App() {
     const [projects, setProjects] = useState([]);
