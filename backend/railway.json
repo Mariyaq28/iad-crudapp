@@ -1,0 +1,7 @@
+{
+  "build": "cd backend && npm install",
+  "start": "cd backend && node server.js",
+  "env": {
+    "PORT": "3000"
+  }
+}
