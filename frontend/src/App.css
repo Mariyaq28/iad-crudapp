@@ -124,19 +124,24 @@ h2 {
     margin: auto;
 }
 
-@media screen and (max-width: 768px) {
-    .project-card {
-        width: 90%;
-        font-size: 14px;
-        padding: 10px;
-    }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .project-card {
+    width: 45%; /* Adjust for tablets */
+  }
+}
 
-    .project-input {
-        width: 100%;
-        font-size: 16px;
-    }
+@media (max-width: 768px) {
+  .project-card {
+    width: 100%; /* Full width on small devices */
+  }
 
-    .button-container {
-        flex-direction: column;
-    }
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
