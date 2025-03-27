@@ -123,26 +123,55 @@ button {
 
 @media (max-width: 768px) {
   body {
-    height: auto;
-    padding: 20px;
+    padding: 10px;
+    min-height: 100vh;
+    box-sizing: border-box;
   }
-  
+
   .App {
     width: 90%;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .input-container {
-    flex-direction: column;  /* Stack input & button */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .input-container input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .input-container button {
+    width: 100%;
   }
 
   .project-card {
-    flex-direction: column;
-    text-align: center;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
   }
 
   button {
     font-size: 14px;
     padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
   }
 }
