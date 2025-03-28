@@ -138,6 +138,7 @@ h2 {
   justify-content: space-between; /* Keeps buttons aligned */
   gap: 8px; /* Adds a small gap between buttons */
 }
+}
 
 .add-btn,
 .refresh-btn {
@@ -149,6 +150,7 @@ h2 {
   justify-content: center;
   border-radius: 5px;
 }
+
 .project-item {
   display: flex;
   align-items: center;
