@@ -31,37 +31,56 @@ h2 {
   font-weight: bold;
 }
 
-/* Input and Buttons */
+/* Input and Buttons Container */
 .input-container {
   display: flex;
-  flex-direction: column; /* Mobile-friendly */
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+/* Input Box */
+.project-input {
+  flex: 1;
+  min-width: 200px; /* Ensures input does not shrink too much */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 
-.project-input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
+/* Buttons */
 .add-btn, .refresh-btn {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
   border-radius: 5px;
+  border: none;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Button Colors */
+.add-btn {
+  background: #28a745;
+  color: white;
 }
 
 .add-btn:hover {
@@ -70,11 +89,15 @@ h2 {
 
 .refresh-btn {
   background: #ffaa00;
+  color: white;
 }
 
 .refresh-btn:hover {
   background: #e69500;
 }
+
+
+
 
 /* Error and Messages */
 .error {
@@ -125,6 +148,26 @@ h2 {
     max-width: 400px;
   }
 }
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 500px) {
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+    .button-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .project-input, .add-btn, .refresh-btn {
+    width: 100%;
+  }
+}
+
+
+
 
 /* Mobile-friendly adjustments */
 @media (max-width: 600px) {
