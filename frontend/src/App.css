@@ -102,6 +102,28 @@ h2 {
   background: #c82333;
 }
 
+
+
+.add-btn, 
+.refresh-btn {
+  width: auto;
+  font-size: 16px;
+}
+
+
+
+
+
+
+/* Default styles for desktop */
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+
 /* Error and Messages */
 .error {
   color: red;
@@ -129,45 +151,33 @@ h2 {
 }
 
 
-/* Ensure Add and Refresh buttons align properly */
 
-@media (max-width: 480px) {
-/* Ensure buttons have the same width and height */
-.button-container {
-  display: flex;
-  justify-content: space-between; /* Keeps buttons aligned */
-  gap: 8px; /* Adds a small gap between buttons */
-}
-}
 
-.add-btn,
-.refresh-btn {
-  flex: 1; /* Ensures equal width */
-  padding: 12px 15px; /* Make both buttons uniform */
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-}
 
-.project-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border-radius: 5px;
-}
 
-.delete-btn {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
+/* Mobile-friendly styles */
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column; /* Stack buttons in column on small screens */
+    gap: 5px;
+  }
 
+  .add-btn, 
+  .refresh-btn {
+    width: 100%; /* Full width buttons on mobile */
+    font-size: 14px;
+  }
+
+  .project-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .delete-btn {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 
 
