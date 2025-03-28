@@ -130,6 +130,7 @@ h2 {
 
 
 /* Ensure Add and Refresh buttons align properly */
+
 @media (max-width: 480px) {
   .input-container {
     flex-direction: row;
@@ -139,6 +140,7 @@ h2 {
   .add-btn,
   .refresh-btn {
     width: 48%; /* Adjust the width to 48% for both buttons to fit in one row */
+    padding: 10px 15px; /* Set padding to ensure equal size */
     margin-top: 0; /* Remove extra margin */
   }
 
