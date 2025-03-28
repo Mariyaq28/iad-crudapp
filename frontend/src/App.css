@@ -35,7 +35,7 @@ h2 {
 .input-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  gap: 5px; /* Adds small space between buttons */
 }
 
 .project-input {
@@ -45,28 +45,21 @@ h2 {
   border: 1px solid #ccc;
 }
 
-.add-btn {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
+.add-btn,
+.refresh-btn {
+  flex: 1; /* Both buttons will take equal width */
+  padding: 12px 15px; /* Make both buttons look the same */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-btn:hover {
   background: #218838;
 }
 
-.refresh-btn {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px;
-}
+
 
 .refresh-btn:hover {
   background: #0056b3;
