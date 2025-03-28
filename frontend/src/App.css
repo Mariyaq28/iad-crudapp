@@ -133,28 +133,39 @@ h2 {
 
 @media (max-width: 480px) {
 /* Ensure buttons have the same width and height */
-.input-container {
+.button-container {
   display: flex;
-  justify-content: space-between;
-  gap: 5px; /* Adds small space between buttons */
+  justify-content: space-between; /* Keeps buttons aligned */
+  gap: 8px; /* Adds a small gap between buttons */
 }
 
 .add-btn,
 .refresh-btn {
-  flex: 1; /* Both buttons will take equal width */
-  padding: 12px 15px; /* Make both buttons look the same */
+  flex: 1; /* Ensures equal width */
+  padding: 12px 15px; /* Make both buttons uniform */
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
+}
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-
-  .project-input {
-    width: 100%;
-    margin-top: 10px;
-  }
+.delete-btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
+
 
 
 
