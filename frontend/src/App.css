@@ -5,23 +5,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;  /* Changed to min-height for better mobile support */
   margin: 0;
+  padding: 10px;
 }
 
+/* Main container */
 .App {
   max-width: 800px;
-  margin: 0 auto;
- background: #fde1b2;
+  width: 100%;
+  background: #fde1b2;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 h1 {
   color: #333;
-  margin-bottom: 10px;
   font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .project-count {
@@ -31,6 +34,7 @@ h1 {
   display: block;
 }
 
+/* Input and buttons */
 .input-container {
   display: flex;
   gap: 10px;
@@ -75,6 +79,7 @@ button:hover {
   transform: translateY(-1px);
 }
 
+/* Project List */
 .projects-list {
   list-style: none;
 }
@@ -113,16 +118,18 @@ button:hover {
   font-size: 14px;
 }
 
-/* Responsive Styles */
+/* ✅ Responsive Styles */
 @media (max-width: 768px) {
   body {
     padding: 10px;
+    height: auto;
   }
 
   .App {
-    width: 95%;
+    width: 100%;
+    max-width: 95%;
     padding: 15px;
-  border-radius: 8px;
+    border-radius: 8px;
   }
 
   .input-container {
@@ -144,7 +151,7 @@ button:hover {
   }
 }
 
-/* Animation */
+/* ✅ Smooth Fade-in Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
