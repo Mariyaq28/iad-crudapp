@@ -12,70 +12,43 @@ function App() {
     const [error, setError] = useState("");
     const [refreshMessage, setRefreshMessage] = useState(false); // Added missing state
 
-    // Fetch projects from backend
+    //fetchProjects
     const fetchProjects = async () => {
-        try {
-            const response = await fetch(`${API_URL}/api/projects`);
-            const data = await response.json();
+    try {
+        const storedProjects = localStorage.getItem("projects");
 
-            if (!Array.isArray(data.projects)) {
-                console.error("Invalid response format:", data);
-                setProjects([]);
-                return;
-            }
-
-            setProjects(data.projects);
-        } catch (error) {
-            console.error("Error fetching projects:", error);
+        if (storedProjects) {
+            setProjects(JSON.parse(storedProjects));  // Load from Local Storage
+        } else {
+            setProjects([]);  // If no data found, set empty
         }
-    };
+    } catch (error) {
+        console.error("Error fetching projects:", error);
+    }
+};
 
-    useEffect(() => {
-        fetchProjects();
-    }, []);
+   const addProject = () => {
+    if (newProject.trim().length < 3) {
+        setError("Project name must be at least 3 characters");
+        return;
+    }
 
-    const addProject = async () => {
-        if (newProject.trim().length < 3) {
-            setError("Project name must be at least 3 characters");
-            return;
-        }
+    const newProjectObj = { id: Date.now(), name: newProject.trim() };  // Unique ID
+    const updatedProjects = [...projects, newProjectObj];
 
-        try {
-            const response = await fetch(`${API_URL}/api/projects`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name: newProject.trim() }),
-            });
+    setProjects(updatedProjects);
+    localStorage.setItem("projects", JSON.stringify(updatedProjects));  // Save to Local Storage
 
-            const data = await response.json();
-            console.log("Response from server:", data);  
+    setNewProject("");  
+    setError("");  
+};
 
-            if (data.status === "error") {
-                setError(data.message);
-            } else {
-                setNewProject("");  
-                setError("");  
-                await fetchProjects();
-            }
-        } catch (error) {
-            console.error("Failed to add project:", error);
-        }
-    };
+const deleteProject = (id) => {
+    const updatedProjects = projects.filter((proj) => proj.id !== id);
+    setProjects(updatedProjects);
+    localStorage.setItem("projects", JSON.stringify(updatedProjects));  // Update Local Storage
+};
 
-    const deleteProject = async (id) => {
-        try {
-            const response = await fetch(`${API_URL}/api/projects/${id}`, {
-                method: "DELETE",
-            });
-
-            const data = await response.json();
-            if (data.status === "success") {
-                setProjects(projects.filter((proj) => proj.id !== id));
-            }
-        } catch (error) {
-            console.error("Failed to delete project:", error);
-        }
-    };
 
     const refreshProjects = async () => {
         await fetchProjects();
@@ -95,13 +68,16 @@ function App() {
         }
     };
 
+useEffect(() => {
+    fetchProjects();
+}, []);
+    
     return (
         <div className="App">
             <header className="App-header">
             <h1>
   <FaProjectDiagram /> CRUD APP
 </h1>
-
 
                 <h2>Total Projects: <span className="count">{projects.length}</span></h2>
 
