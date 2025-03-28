@@ -136,10 +136,15 @@ h2 {
     align-items: stretch;
   }
 
-  .add-btn,
-  .refresh-btn {
+  .add-btn{ 
     width: 100%;
     margin-top: 5px;
+    display: block; /* Ensures they don't align oddly */
+    text-align: center;}
+  
+  .refresh-btn {
+    width: 100%;
+    margin-top: 4px;
     display: block; /* Ensures they don't align oddly */
     text-align: center;
   }
