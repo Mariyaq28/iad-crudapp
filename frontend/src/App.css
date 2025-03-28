@@ -132,23 +132,23 @@ h2 {
 /* Ensure Add and Refresh buttons align properly */
 
 @media (max-width: 480px) {
-  .input-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+/* Ensure buttons have the same width and height */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px; /* Adds small space between buttons */
+}
 
-  .add-btn {
-    width: 50%; /* Adjust the width to 48% for both buttons to fit in one row */
-    padding: 10px 15px; /* Set padding to ensure equal size */
-    margin-top: 0; /* Remove extra margin */
-    
-  }
-  .refresh-btn {
-    width: 48%; /* Adjust the width to 48% for both buttons to fit in one row */
-    padding: 10px 15px; /* Set padding to ensure equal size */
-    margin-top: 0; /* Remove extra margin */
-   
-  }
+.add-btn,
+.refresh-btn {
+  flex: 1; /* Both buttons will take equal width */
+  padding: 12px 15px; /* Make both buttons look the same */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
   .project-input {
     width: 100%;
