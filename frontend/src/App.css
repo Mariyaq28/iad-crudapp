@@ -136,22 +136,14 @@ h2 {
   }
 }
 
-
-/* Adjusting buttons for mobile */
+/* Responsive: Adjust button sizes on mobile */
 @media (max-width: 480px) {
- /* Adjusting buttons for mobile */
-@media (max-width: 480px) {
-  .input-container {
-    flex-direction: column;
-    gap: 8px;
-  }
-
   .add-btn,
   .refresh-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
     width: 100%;
-    text-align: center;
   }
-}
 
   .delete-btn {
     margin-left: 0;
