@@ -1,4 +1,4 @@
-/* General Styles */
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #f8a8a8, #fbd3d3);
@@ -17,70 +17,41 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 400px;
-  max-width: 90%; /* Adjust for responsiveness */
 }
 
 h1 {
   font-size: 25px;
   color: black;
+  
 }
 
 h2 {
   font-size: 20px;
   color: lightcoral;
-  font-weight: bold;
+  font-style: bold;
 }
 
-/* Input and Buttons Container */
+/* Input and buttons */
 .input-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-
-
-/* Input Box */
 .project-input {
   flex: 1;
-  min-width: 200px; /* Ensures input does not shrink too much */
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px;
 }
 
-/* Button Container */
-.button-container {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Buttons */
-.add-btn, .refresh-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  white-space: nowrap; /* Prevents text wrapping */
-}
-
-/* Button Colors */
 .add-btn {
   background: #28a745;
   color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .add-btn:hover {
@@ -88,32 +59,23 @@ h2 {
 }
 
 .refresh-btn {
-  background: #ffaa00;
+  background: #007bff;
   color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .refresh-btn:hover {
-  background: #e69500;
-}
-
-
-
-
-/* Error and Messages */
-.error {
-  color: red;
-  font-size: 14px;
-}
-
-.refresh-message {
-  color: green;
-  font-size: 14px;
+  background: #0056b3;
 }
 
 /* Project List */
 .project-list {
   margin-top: 15px;
-  font-size: 14px;
+  font-size: 13px;
   font-style: italic;
 }
 
@@ -134,57 +96,81 @@ h2 {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .delete-btn:hover {
   background: #c82333;
 }
 
-/* Responsive: Adjust layout for smaller screens */
+
+
+.add-btn, 
+.refresh-btn {
+  width: auto;
+  font-size: 16px;
+}
+
+
+
+
+
+
+/* Default styles for desktop */
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+
+/* Error and Messages */
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.refresh-message {
+  color: green;
+  font-size: 14px;
+}
+
+/* Responsive: Adjust container width for smaller screens */
 @media (max-width: 768px) {
   .App {
     width: 90%;
     max-width: 400px;
+    margin: auto;
   }
 }
-
-/* Responsive Fix for Small Screens */
-@media (max-width: 500px) {
-  .input-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-    .button-container {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .project-input, .add-btn, .refresh-btn {
-    width: 100%;
+/* Responsive: Smaller title on mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
   }
 }
 
 
 
 
-/* Mobile-friendly adjustments */
+
+
+/* Mobile-friendly styles */
 @media (max-width: 600px) {
   .button-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack buttons in column on small screens */
     gap: 5px;
   }
 
-  .add-btn, .refresh-btn {
-    width: 100%;
+  .add-btn, 
+  .refresh-btn {
+    width: 100%; /* Full width buttons on mobile */
     font-size: 14px;
   }
 
-  .project-card {
+  .project-item {
     flex-direction: row;
     justify-content: space-between;
-    font-size: 13px;
   }
 
   .delete-btn {
@@ -193,16 +179,35 @@ h2 {
   }
 }
 
-/* Extra small devices (phones) */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
 
+
+/* Button Styles */
+.add-btn {
+  background: #61dafb;
+  color: white;
+}
+
+.refresh-btn {
+  background: #ffaa00;
+  color: white;
+}
+
+/* Responsive: Stack buttons on small screens */
+@media (max-width: 480px) {
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+/* Responsive: Adjust project list height */
+@media (max-width: 480px) {
   .project-list {
     max-height: 250px;
   }
+}
 
+/* Responsive: Smaller project cards on mobile */
+@media (max-width: 480px) {
   .project-card {
     font-size: 0.9rem;
     padding: 12px;
