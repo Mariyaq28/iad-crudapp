@@ -5,9 +5,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensures it covers the full screen */
+  height: 100vh;
   margin: 0;
-  padding: 0 10px; /* Small padding for small screens */
 }
 
 /* Main container */
@@ -17,49 +16,43 @@ body {
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 100%; /* Takes full width */
-  max-width: 500px; /* Maximum width for desktops */
+  width: 400px;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 25px;
   color: black;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 20px;
   color: lightcoral;
-  font-weight: bold;
+  font-weight: bold; /* Fixed font-style issue */
 }
 
 /* Input and buttons */
 .input-container {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
   margin-bottom: 10px;
   flex-wrap: wrap; /* Ensures proper wrapping on small screens */
 }
 
 .project-input {
   flex: 1;
-  padding: 12px;
+  padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  width: 100%;
 }
 
 /* Unified Button Styles */
 button {
   border: none;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   color: white;
-  font-size: 1rem;
-  width: 100%; /* Make buttons responsive */
 }
 
 .add-btn {
@@ -72,6 +65,7 @@ button {
 
 .refresh-btn {
   background: #007bff;
+  margin-left: 5px;
 }
 
 .refresh-btn:hover {
@@ -89,26 +83,13 @@ button {
 /* Project List */
 .project-list {
   margin-top: 15px;
-  font-size: 1rem;
+  font-size: 13px;
   font-style: italic;
-  max-height: 300px;
-  overflow-y: auto;
 }
 
-/* Scrollbar Style */
-.project-list::-webkit-scrollbar {
-  width: 6px;
-}
-
-.project-list::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-/* Each project card */
 .project-card {
   background: white;
-  padding: 12px;
+  padding: 10px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
@@ -119,49 +100,55 @@ button {
 /* Error and Messages */
 .error {
   color: red;
-  font-size: 1rem;
+  font-size: 14px;
 }
 
 .refresh-message {
   color: green;
-  font-size: 1rem;
+  font-size: 14px;
 }
 
-/* Responsive: Small tablets & mobile screens */
+/* Responsive: Adjust container width for smaller screens */
 @media (max-width: 768px) {
   .App {
-    width: 95%;
+    width: 90%;
     max-width: 400px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
+    margin: auto;
   }
 }
 
 /* Responsive: Mobile Optimizations */
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
-  .input-container {
+  .project-input {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .button-container {
+    display: flex;
     flex-direction: column;
     gap: 5px;
   }
 
-  .project-input {
-    font-size: 1rem;
-    padding: 10px;
+  .add-btn,
+  .refresh-btn {
+    font-size: 0.9rem;
+    width: 100%;
   }
 
-  button {
-    font-size: 1rem;
-    padding: 10px;
+  .delete-btn {
+    margin-left: 0;
+    width: 70px;
   }
 
   .project-list {
     max-height: 250px;
+    overflow-y: auto;
   }
 
   .project-card {
