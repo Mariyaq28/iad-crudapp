@@ -1,7 +1,7 @@
-/* General Styles */
+/* General styles */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #f8a39a, #fbc7a4);
+  background: linear-gradient(to right, #f8a8a8, #fbd3d3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,105 +9,177 @@ body {
   margin: 0;
 }
 
-/* Main Container */
-.container {
-  background: #ffebbb;
+/* Main container */
+.App {
+  background: #fde1b2;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 90%;
-  max-width: 400px;
+  width: 400px;
 }
 
-/* Title */
 h1 {
-  font-size: 24px;
+  font-size: 25px;
+  color: black;
+  
+}
+
+h2 {
+  font-size: 20px;
+  color: lightcoral;
+  font-style: bold;
+}
+
+/* Input and buttons */
+.input-container {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
-/* Total Projects */
-.total-projects {
-  font-size: 18px;
-  font-weight: bold;
-  color: #d9534f;
-}
-
-/* Input Field */
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-/* Buttons Container */
-.input-container {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-/* Buttons */
-button {
+.project-input {
   flex: 1;
-  padding: 12px;
-  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  background: #28a745;
+  color: white;
   border: none;
+  padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Add Project Button */
-.add-btn {
-  background: #4caf50;
 }
 
 .add-btn:hover {
-  background: #45a049;
+  background: #218838;
 }
 
-/* Refresh Projects Button */
 .refresh-btn {
-  background: #f0ad4e;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .refresh-btn:hover {
-  background: #ec971f;
+  background: #0056b3;
 }
 
-/* Error Message */
-.error-message {
+/* Project List */
+.project-list {
+  margin-top: 15px;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.project-card {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+/* Error and Messages */
+.error {
   color: red;
   font-size: 14px;
-  margin-top: 5px;
 }
 
-/* No Projects Message */
-.no-projects {
-  font-style: italic;
-  color: gray;
-  margin-top: 10px;
+.refresh-message {
+  color: green;
+  font-size: 14px;
 }
 
-/* Responsive */
+/* Responsive: Adjust container width for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+  }
+}
+/* Responsive: Smaller title on mobile */
 @media (max-width: 480px) {
-  .container {
-    width: 95%;
+  h1 {
+    font-size: 1.8rem;
   }
-
-  input {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
+}
+/* Responsive: Full-width input on mobile */
+@media (max-width: 480px) {
+  .project-input {
+    width: 100%;
+    font-size: 0.9rem;
     padding: 10px;
+  }
+}
+
+/* Responsive: Adjust button sizes on mobile */
+@media (max-width: 480px) {
+  .add-btn,
+  .refresh-btn {
+    font-size: 0.9rem;
+   padding: 8px 12px;
+    width: 100%;
+  }
+
+  .delete-btn {
+    margin-left: 0;
+    min-width: 70px;
+  }
+}
+
+/* Button Styles */
+.add-btn {
+  background: #61dafb;
+  color: white;
+}
+
+.refresh-btn {
+  background: #ffaa00;
+  color: white;
+}
+
+/* Responsive: Stack buttons on small screens */
+@media (max-width: 480px) {
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+/* Responsive: Adjust project list height */
+@media (max-width: 480px) {
+  .project-list {
+    max-height: 250px;
+  }
+}
+
+/* Responsive: Smaller project cards on mobile */
+@media (max-width: 480px) {
+  .project-card {
+    font-size: 0.9rem;
+    padding: 12px;
   }
 }
