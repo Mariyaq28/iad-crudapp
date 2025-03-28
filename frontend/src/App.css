@@ -139,6 +139,8 @@ h2 {
 
 /* Adjusting buttons for mobile */
 @media (max-width: 480px) {
+ /* Adjusting buttons for mobile */
+@media (max-width: 480px) {
   .input-container {
     flex-direction: column;
     gap: 8px;
@@ -150,7 +152,6 @@ h2 {
     text-align: center;
   }
 }
-
 
   .delete-btn {
     margin-left: 0;
