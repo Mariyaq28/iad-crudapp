@@ -1,4 +1,4 @@
-/* General styles */
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #f8a8a8, #fbd3d3);
@@ -17,41 +17,51 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 400px;
+  max-width: 90%; /* Adjust for responsiveness */
 }
 
 h1 {
   font-size: 25px;
   color: black;
-  
 }
 
 h2 {
   font-size: 20px;
   color: lightcoral;
-  font-style: bold;
+  font-weight: bold;
 }
 
-/* Input and buttons */
+/* Input and Buttons */
 .input-container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-direction: column; /* Mobile-friendly */
+  gap: 10px;
+  align-items: center;
 }
 
 .project-input {
-  flex: 1;
+  width: 100%;
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-.add-btn {
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.add-btn, .refresh-btn {
   background: #28a745;
   color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .add-btn:hover {
@@ -59,23 +69,28 @@ h2 {
 }
 
 .refresh-btn {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px;
+  background: #ffaa00;
 }
 
 .refresh-btn:hover {
-  background: #0056b3;
+  background: #e69500;
+}
+
+/* Error and Messages */
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.refresh-message {
+  color: green;
+  font-size: 14px;
 }
 
 /* Project List */
 .project-list {
   margin-top: 15px;
-  font-size: 13px;
+  font-size: 14px;
   font-style: italic;
 }
 
@@ -96,81 +111,37 @@ h2 {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .delete-btn:hover {
   background: #c82333;
 }
 
-
-
-.add-btn, 
-.refresh-btn {
-  width: auto;
-  font-size: 16px;
-}
-
-
-
-
-
-
-/* Default styles for desktop */
-.button-container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: center;
-}
-
-
-/* Error and Messages */
-.error {
-  color: red;
-  font-size: 14px;
-}
-
-.refresh-message {
-  color: green;
-  font-size: 14px;
-}
-
-/* Responsive: Adjust container width for smaller screens */
+/* Responsive: Adjust layout for smaller screens */
 @media (max-width: 768px) {
   .App {
     width: 90%;
     max-width: 400px;
-    margin: auto;
-  }
-}
-/* Responsive: Smaller title on mobile */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
   }
 }
 
-
-
-
-
-
-/* Mobile-friendly styles */
+/* Mobile-friendly adjustments */
 @media (max-width: 600px) {
   .button-container {
-    flex-direction: column; /* Stack buttons in column on small screens */
+    flex-direction: column;
     gap: 5px;
   }
 
-  .add-btn, 
-  .refresh-btn {
-    width: 100%; /* Full width buttons on mobile */
+  .add-btn, .refresh-btn {
+    width: 100%;
     font-size: 14px;
   }
 
-  .project-item {
+  .project-card {
     flex-direction: row;
     justify-content: space-between;
+    font-size: 13px;
   }
 
   .delete-btn {
@@ -179,35 +150,16 @@ h2 {
   }
 }
 
-
-
-/* Button Styles */
-.add-btn {
-  background: #61dafb;
-  color: white;
-}
-
-.refresh-btn {
-  background: #ffaa00;
-  color: white;
-}
-
-/* Responsive: Stack buttons on small screens */
+/* Extra small devices (phones) */
 @media (max-width: 480px) {
-  .button-container {
-    flex-direction: column;
+  h1 {
+    font-size: 1.8rem;
   }
-}
 
-/* Responsive: Adjust project list height */
-@media (max-width: 480px) {
   .project-list {
     max-height: 250px;
   }
-}
 
-/* Responsive: Smaller project cards on mobile */
-@media (max-width: 480px) {
   .project-card {
     font-size: 0.9rem;
     padding: 12px;
