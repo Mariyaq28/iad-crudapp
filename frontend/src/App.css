@@ -129,8 +129,7 @@ h2 {
 }
 
 
-/* Ensure buttons are aligned properly */
-/
+/* Ensure Add and Refresh buttons align properly */
 @media (max-width: 480px) {
   .input-container {
     flex-direction: row;
@@ -148,7 +147,6 @@ h2 {
     margin-top: 10px;
   }
 }
-
 
 
 
