@@ -141,13 +141,13 @@ h2 {
     width: 50%; /* Adjust the width to 48% for both buttons to fit in one row */
     padding: 10px 15px; /* Set padding to ensure equal size */
     margin-top: 0; /* Remove extra margin */
-    font-size: 11px;
+    
   }
   .refresh-btn {
     width: 48%; /* Adjust the width to 48% for both buttons to fit in one row */
     padding: 10px 15px; /* Set padding to ensure equal size */
     margin-top: 0; /* Remove extra margin */
-    font-size: 11px;
+   
   }
 
   .project-input {
