@@ -22,13 +22,12 @@ body {
 h1 {
   font-size: 25px;
   color: black;
-  
 }
 
 h2 {
   font-size: 20px;
   color: lightcoral;
-  font-style: bold;
+  font-weight: bold; /* Fixed font-style issue */
 }
 
 /* Input and buttons */
@@ -36,6 +35,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  flex-wrap: wrap; /* Ensures proper wrapping on small screens */
 }
 
 .project-input {
@@ -45,13 +45,18 @@ h2 {
   border: 1px solid #ccc;
 }
 
-.add-btn {
-  background: #28a745;
-  color: white;
+/* Unified Button Styles */
+button {
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+  color: white;
+}
+
+.add-btn {
+  background: #28a745;
 }
 
 .add-btn:hover {
@@ -60,16 +65,19 @@ h2 {
 
 .refresh-btn {
   background: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
   margin-left: 5px;
 }
 
 .refresh-btn:hover {
   background: #0056b3;
+}
+
+.delete-btn {
+  background: #dc3545;
+}
+
+.delete-btn:hover {
+  background: #c82333;
 }
 
 /* Project List */
@@ -87,19 +95,6 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
-}
-
-.delete-btn {
-  background: #dc3545;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  background: #c82333;
 }
 
 /* Error and Messages */
@@ -121,63 +116,41 @@ h2 {
     margin: auto;
   }
 }
-/* Responsive: Smaller title on mobile */
+
+/* Responsive: Mobile Optimizations */
 @media (max-width: 480px) {
   h1 {
     font-size: 1.8rem;
   }
-}
-/* Responsive: Full-width input on mobile */
-@media (max-width: 480px) {
+
   .project-input {
     width: 100%;
     font-size: 0.9rem;
     padding: 10px;
   }
-}
 
-/* Responsive: Adjust button sizes on mobile */
-@media (max-width: 480px) {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
   .add-btn,
   .refresh-btn {
     font-size: 0.9rem;
-   padding: 8px 12px;
     width: 100%;
   }
 
   .delete-btn {
     margin-left: 0;
-    min-width: 70px;
+    width: 70px;
   }
-}
 
-/* Button Styles */
-.add-btn {
-  background: #61dafb;
-  color: white;
-}
-
-.refresh-btn {
-  background: #ffaa00;
-  color: white;
-}
-
-/* Responsive: Stack buttons on small screens */
-@media (max-width: 480px) {
-  .button-container {
-    flex-direction: column;
-  }
-}
-
-/* Responsive: Adjust project list height */
-@media (max-width: 480px) {
   .project-list {
     max-height: 250px;
+    overflow-y: auto;
   }
-}
 
-/* Responsive: Smaller project cards on mobile */
-@media (max-width: 480px) {
   .project-card {
     font-size: 0.9rem;
     padding: 12px;
