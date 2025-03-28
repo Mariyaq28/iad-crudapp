@@ -7,7 +7,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  padding: 10px;
 }
 
 /* Main container */
@@ -17,49 +16,43 @@ body {
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
+  width: 400px;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 25px;
   color: black;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 20px;
   color: lightcoral;
-  font-weight: bold;
+  font-weight: bold; /* Fixed font-style issue */
 }
 
-/* Input and Buttons */
+/* Input and buttons */
 .input-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* Ensures proper wrapping on small screens */
 }
 
 .project-input {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  width: 100%;
 }
 
-/* Buttons */
+/* Unified Button Styles */
 button {
   border: none;
-  padding: 10px;
+  padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   color: white;
-  font-size: 1rem;
-  width: 100%;
 }
 
 .add-btn {
@@ -72,6 +65,7 @@ button {
 
 .refresh-btn {
   background: #007bff;
+  margin-left: 5px;
 }
 
 .refresh-btn:hover {
@@ -80,7 +74,6 @@ button {
 
 .delete-btn {
   background: #dc3545;
-  min-width: 50px;
 }
 
 .delete-btn:hover {
@@ -90,24 +83,18 @@ button {
 /* Project List */
 .project-list {
   margin-top: 15px;
-  font-size: 1rem;
+  font-size: 13px;
   font-style: italic;
-  max-height: 300px;
-  overflow-y: auto;
 }
 
-/* Project Card */
 .project-card {
   background: white;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
+  margin-bottom: 5px;
 }
 
 /* Error and Messages */
@@ -121,46 +108,51 @@ button {
   font-size: 14px;
 }
 
-/* Responsive Adjustments */
+/* Responsive: Adjust container width for smaller screens */
 @media (max-width: 768px) {
   .App {
     width: 90%;
-  }
-
-  .project-input {
-    font-size: 1rem;
+    max-width: 400px;
+    margin: auto;
   }
 }
 
+/* Responsive: Mobile Optimizations */
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.5rem;
-  }
-
-  .input-container {
-    flex-direction: column;
+    font-size: 1.8rem;
   }
 
   .project-input {
+    width: 100%;
     font-size: 0.9rem;
-    padding: 12px;
+    padding: 10px;
   }
 
-  button {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .add-btn,
+  .refresh-btn {
     font-size: 0.9rem;
-    padding: 12px;
+    width: 100%;
   }
 
   .delete-btn {
-    min-width: 45px;
+    margin-left: 0;
+    width: 70px;
   }
 
   .project-list {
     max-height: 250px;
+    overflow-y: auto;
   }
 
   .project-card {
     font-size: 0.9rem;
-    padding: 10px;
+    padding: 12px;
   }
 }
