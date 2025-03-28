@@ -129,10 +129,7 @@ h2 {
 }
 
 
-/* Responsive: Adjust button sizes on mobile */
-
-
-/* Ensure buttons and project list are aligned properly */
+/* Ensure buttons are aligned properly */
 @media (max-width: 480px) {
   .input-container {
     flex-direction: column;
@@ -140,15 +137,14 @@ h2 {
   }
 
   .add-btn,
-  .refresh-btn,
-  .project-input,
-  .project-list {
+  .refresh-btn {
     width: 100%;
     margin-top: 5px;
-    display: block; /* Ensures they stay aligned */
+    display: block; /* Ensures they don't align oddly */
     text-align: center;
   }
 }
+
 
 
 /* Button Styles */
