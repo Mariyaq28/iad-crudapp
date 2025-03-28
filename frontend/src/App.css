@@ -130,25 +130,25 @@ h2 {
 
 
 /* Ensure buttons are aligned properly */
+/
 @media (max-width: 480px) {
   .input-container {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .add-btn{ 
-    width: 100%;
-    margin-top: 5px;
-    display: block; /* Ensures they don't align oddly */
-    text-align: center;}
-  
+  .add-btn,
   .refresh-btn {
+    width: 48%; /* Adjust the width to 48% for both buttons to fit in one row */
+    margin-top: 0; /* Remove extra margin */
+  }
+
+  .project-input {
     width: 100%;
-    margin-top: 6px;
-    display: block; /* Ensures they don't align oddly */
-    text-align: center;
+    margin-top: 10px;
   }
 }
+
 
 
 
