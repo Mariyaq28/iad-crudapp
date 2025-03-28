@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;  /* Changed to min-height for better mobile support */
+  min-height: 100vh;
   margin: 0;
   padding: 10px;
 }
@@ -34,11 +34,11 @@ h1 {
   display: block;
 }
 
-/* Input and buttons */
+/* ✅ Input and buttons */
 .input-container {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;  /* Neeche gap */
 }
 
 input {
@@ -64,9 +64,11 @@ button {
   transition: all 0.3s;
 }
 
+/* ✅ Add aur Refresh Button ke beech gap */
 .add-btn {
   background-color: #4CAF50;
   color: white;
+  margin-right: 10px; /* Add aur refresh ke beech spacing */
 }
 
 .refresh-btn {
@@ -79,9 +81,10 @@ button:hover {
   transform: translateY(-1px);
 }
 
-/* Project List */
+/* ✅ Project List (neeche gap add) */
 .projects-list {
   list-style: none;
+  margin-top: 20px; /* List aur last button ke beech spacing */
 }
 
 .project-card {
