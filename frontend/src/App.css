@@ -1,175 +1,247 @@
-/* General styles */
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #f8a8a8, #fbd3d3);
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #1e1e2f;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 10px;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Main container */
+/* Main Container */
 .App {
-  max-width: 600px;
-  width: 100%;
-  background: #fde1b2;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-}
-
-h1 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.project-count {
-  color: #4CAF50;
-  font-weight: bold;
-  margin-bottom: 15px;
-  display: block;
-}
-
-/* ✅ Input and buttons */
-.input-container {
+  width: 90%;
+  max-width: 600px;
+  animation: fadeIn 0.8s ease-in-out;
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px; 
-}
-
-input {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  outline: none;
-  transition: border 0.3s;
-}
-
-input:focus {
-  border-color: #4CAF50;
-}
-
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.add-btn {
-  background-color: #4CAF50;
-  color: white;
-  margin-right: 10px; 
-}
-
-.refresh-btn {
-  background-color: #2196F3;
-  color: white;
-}
-
-button:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* ✅ Project List */
-
-.projects-list {
-  list-style: none;
-  margin-top: 40px; 
-  padding: 0;
-  font-style:italic;
-}
-
-.project-card {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  justify-content: center;
 }
 
-.project-card:hover {
+.error {
+  color: red;
+}
+
+/* Responsive: Adjust container width for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+  }
+}
+
+/* Header */
+.App-header {
+  background: #2a2b3d;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.App-header:hover {
   transform: scale(1.02);
 }
 
-/* ✅ Delete Button Fix */
-.delete-btn {
-  background-color: #f44336;
+/* Title with Animated Icon */
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #61dafb;
+  text-shadow: 0px 0px 10px rgba(97, 218, 251, 0.8);
+}
+
+h1 .icon {
+  text-shadow: none;
+}
+
+/* Responsive: Smaller title on mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Project Count */
+h2 {
+  font-size: 1.3rem;
+  color: #d1d1e9;
+}
+
+.count {
+  color: #61dafb;
+  font-weight: bold;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Input Styling */
+.project-input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  text-align: center;
+  background: #3a3b4f;
   color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
-.delete-btn:hover {
-  background-color: #c82333;
-  transform: translateX(-3px);
-}
-
-/* ✅ Error and Messages */
-.error {
-  color: red;
-  font-size: 14px;
-}
-
-.refresh-message {
-  color: green;
-  font-size: 14px;
-}
-
-/* ✅ Responsive Styles */
-@media (max-width: 768px) {
-  body {
+/* Responsive: Full-width input on mobile */
+@media (max-width: 480px) {
+  .project-input {
+    width: 100%;
+    font-size: 0.9rem;
     padding: 10px;
   }
+}
 
-  .App {
+/* Buttons */
+.add-btn,
+.refresh-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 120px;
+}
+
+/* Delete Button Specific Style */
+.delete-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 70px;
+  background: #ff6b6b;
+  color: white;
+  margin-left: auto;
+}
+
+/* ✅ Delete Button Hover Effect */
+.delete-btn:hover {
+  background: #e63946;
+}
+
+/* ✅ Buttons ke beech aur neeche spacing */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ✅ List aur Buttons ke beech gap */
+.project-list {
+  margin-top: 30px;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* ✅ List items ko aur neeche shift karne ka effect */
+.project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3a3b4f;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: 0.3s ease-in-out;
+}
+
+/* Responsive: Adjust button sizes on mobile */
+@media (max-width: 480px) {
+  .add-btn,
+  .refresh-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
     width: 100%;
-    max-width: 95%;
-    padding: 15px;
-  }
-
-  .input-container {
-    flex-direction: column;
-  }
-
-  input, button {
-    width: 100%;
-  }
-
-  .project-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
   }
 
   .delete-btn {
-    align-self: flex-end;
+    margin-left: 0;
+    min-width: 70px;
   }
 }
 
-/* ✅ Smooth Fade-in Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Button Styles */
+.add-btn {
+  background: #61dafb;
+  color: white;
 }
 
-.project-card {
-  animation: fadeIn 0.3s ease-out;
+.refresh-btn {
+  background: #ffaa00;
+  color: white;
+}
+
+/* Responsive: Stack buttons on small screens */
+@media (max-width: 480px) {
+  .button-container {
+    flex-direction: column;
+  }
+}
+
+/* Responsive: Adjust project list height */
+@media (max-width: 480px) {
+  .project-list {
+    max-height: 250px;
+  }
+}
+
+/* Responsive: Smaller project cards on mobile */
+@media (max-width: 480px) {
+  .project-card {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
 }
