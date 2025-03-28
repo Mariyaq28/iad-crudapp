@@ -64,8 +64,8 @@ button {
 }
 
 .refresh-btn {
-  background: #007bff;
-  margin-left: 5px;
+    background: #007bff;
+    margin-left: 0px;
 }
 
 .refresh-btn:hover {
