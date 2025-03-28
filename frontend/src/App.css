@@ -38,7 +38,7 @@ h1 {
 .input-container {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;  /* Neeche gap */
+  margin-bottom: 25px;  
 }
 
 input {
@@ -64,11 +64,10 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-/* ✅ Add aur Refresh Button ka spacing */
 .add-btn {
   background-color: #4CAF50;
   color: white;
-  margin-right: 10px; /* Add aur refresh ke beech spacing */
+  margin-right: 10px; 
 }
 
 .refresh-btn {
@@ -82,12 +81,12 @@ button:hover {
 }
 
 /* ✅ Project List */
+
 .projects-list {
   list-style: none;
-  margin-top: 20px; /* List aur last button ke beech spacing */
+  margin-top: 25px;  
   padding: 0;
 }
-
 .project-card {
   padding: 15px;
   border: 1px solid #ddd;
